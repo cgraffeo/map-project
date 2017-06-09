@@ -11,15 +11,16 @@ var map;
         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 44.938502, lng: -123.030474},
-          zoom: 13
+          zoom: 15
         });
         // These are the real estate listings that will be shown to the user.
         // Normally we'd have these in a database instead.
         var locations = [
           {title: 'Capitol', location: {lat: 44.938502, lng: -123.030474}},
-          {title: 'Test1', location: {lat: 44.929610, lng: -123.030474}},
-          {title: 'Test2', location: {lat: 44.955808, lng: -123.030474}},
-          {title: 'Test3', location: {lat: 44.946405, lng: -123.030474}}
+          {title: 'Salem Health - Hospital', location: {lat: 44.932337, lng: -123.034181}},
+          {title: 'Riverfront City Park', location: {lat: 44.942180, lng: -123.042549}},
+          {title: 'The Governor' +"'"+'s Cup Coffee Roasters', location: {lat: 44.940984, lng: -123.036755}},
+          {title: 'Salem Center', location: {lat: 44.943273, lng: -123.036157}}
         ];
         var largeInfowindow = new google.maps.InfoWindow();
         var bounds = new google.maps.LatLngBounds();
