@@ -10,62 +10,23 @@
 </head>
 
 <body>
-
-  <!-- <div id="wrapper">
-    <div id="sidebar">
-      <div class="search-area">
-        <input type="search" id="searchLocation" placeholder="Search Salem for points of interest!">
-      </div>
-    </div>
-    <div id="main">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-9">
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <div class="search">
+                <input id="filter" type="text" placeholder="Search Salem!" data-bind="textInput: filter" class="form-control">
+                <ul class data-bind="foreach: visibleLocations">
+                    <li class="location" data-bind="text: title">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="main-wrapper">
             <h1>Points of Interest Salem, OR</h1>
             <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            <div id="map">
             </div>
-      <div id="map"></div>
-    </div>
-    </div>
-    </div>
-  </div> -->
-  <div id="wrapper">
-
-        <!-- Sidebar -->
-        <div id="sidebar-wrapper">
-          <div class="search">
-            <!-- <div class="form-group"> -->
-            <!-- <div class="icon-addon addon-md"> -->
-            <input type="search" id="searchItem" placeholder="Search Salem!" class="form-control" data-bind="textInput: mapParameter, valueUpdate: 'afterkeydown'">
-            <!-- </div> -->
-            <!-- </div> -->
-            <ul class data-bind = "foreach: searchList">
-              <li class = "location" data-bind = "text: title, click: $parent.markerAnimator">
-              </li>
-            </ul>
-          </div>
         </div>
-        <!-- /#sidebar-wrapper -->
-
-        <!-- Page Content -->
-        <div id="main-wrapper">
-            <!-- <div class="container-fluid"> -->
-                <!-- <div class="row"> -->
-                    <!-- <div class="col-lg-9"> -->
-                        <h1>Points of Interest Salem, OR</h1>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    <!-- </div> -->
-                    <div id="map">
-                    </div>
-                <!-- </div> -->
-
-            <!-- </div> -->
-        </div>
-        <!-- /#page-content-wrapper -->
-
-
     </div>
-    <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <!-- Knockout JS CDN -->
