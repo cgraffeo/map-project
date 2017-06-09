@@ -5,17 +5,69 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Untitled</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="map"></div>
+
+  <!-- <div id="wrapper">
+    <div id="sidebar">
+      <div class="search-area">
+        <input type="search" id="searchLocation" placeholder="Search Salem for points of interest!">
+      </div>
+    </div>
+    <div id="main">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-9">
+            <h1>Points of Interest Salem, OR</h1>
+            <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+            </div>
+      <div id="map"></div>
+    </div>
+    </div>
+    </div>
+  </div> -->
+  <div id="wrapper">
+
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper">
+          <div class="search">
+            <!-- <div class="form-group"> -->
+            <!-- <div class="icon-addon addon-md"> -->
+            <input type="search" id="searchItem" placeholder="Search Salem!" class="form-control" data-bind="textInput: mapParameter, valueUpdate: 'afterkeydown'">
+            <!-- </div> -->
+            <!-- </div> -->
+            <ul class data-bind = "foreach: searchList">
+              <li class = "location" data-bind = "text: title, click: $parent.markerAnimator">
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+        <div id="main-wrapper">
+            <!-- <div class="container-fluid"> -->
+                <!-- <div class="row"> -->
+                    <!-- <div class="col-lg-9"> -->
+                        <h1>Points of Interest Salem, OR</h1>
+                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+                    <!-- </div> -->
+                    <div id="map">
+                    </div>
+                <!-- </div> -->
+
+            <!-- </div> -->
+        </div>
+        <!-- /#page-content-wrapper -->
+
+
+    </div>
+    <!-- /#wrapper -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <!-- <script src= "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <!-- Bootstrap CSS -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script> -->
     <!-- Knockout JS CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <!-- Neighborhood Map Javascript file -->

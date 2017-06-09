@@ -1,19 +1,22 @@
 $(document).ready(function() {
-  $('[data-toggle=offcanvas]').click(function() {
-    $('.row-offcanvas').toggleClass('active');
-  });
+  $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
 });
+
+
 
 var map;
       // Create a new blank array for all the listing markers.
       var markers = [];
       function initMap() {
-        // Constructor creates a new map - only center and zoom are required.
+        // Constructor creates a new map
         map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 44.938502, lng: -123.030474},
           zoom: 15
         });
-        // These are the real estate listings that will be shown to the user.
+        // These are the locations that will be shown to the user.
         // Normally we'd have these in a database instead.
         var locations = [
           {title: 'Capitol', location: {lat: 44.938502, lng: -123.030474}},
@@ -47,8 +50,7 @@ var map;
         $('#show-listings').on('click', showListings);
         $('#hide-listings').on('click', hideListings);
       }
-      // This function populates the infowindow when the marker is clicked. We'll only allow
-      // one infowindow which will open at the marker that is clicked, and populate based
+      // This function populates the infowindow when the marker is clicked. Info is populated based
       // on that markers position.
       function populateInfoWindow(marker, infowindow) {
         // Check to make sure the infowindow is not already opened on this marker.
