@@ -41,6 +41,7 @@ function initMap() {
       animation: google.maps.Animation.DROP,
       id: i
     });
+
     // Push the marker to our array of markers.
     markers.push(marker);
     // Create an onclick event to open an infowindow at each marker.
@@ -86,6 +87,7 @@ function ViewModel(){
   var self = this;
   this.filter = ko.observable();
   this.locations = ko.observableArray(locations);
+  this.markers = ko.observableArray(markers);
 
   this.visibleLocations = ko.computed(function(){
     return this.locations().filter(function(location){
