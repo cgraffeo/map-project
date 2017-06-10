@@ -1,49 +1,49 @@
 {
-    "locations" = [
+    "locations": [
     {"title": "Oregon State Capitol",
-       location: {
-              lat: 44.938502,
-              lng: -123.030474
+       "location": {
+              "lat": 44.938502,
+              "lng": -123.030474
             },
               "address": "900 Court St NE",
               "city": "Salem",
               "state": "OR",
               "zipcode": "97301"},
     {"title": "Salem Health - Hospital",
-       location: {
-              lat: 44.932337,
-              lng: -123.034181
+       "location": {
+              "lat": 44.932337,
+              "lng": -123.034181
             },
               "address": "890 Oak St SE",
               "city": "Salem",
               "state": "OR",
               "zipcode": "97301"},
     {"title": "Riverfront City Park",
-       location: {
-              lat: 44.942180,
-              lng: -123.042549
+       "location": {
+              "lat": 44.942180,
+              "lng": -123.042549
             },
               "address": "200 Water St NE",
               "city": "Salem",
               "state": "OR",
               "zipcode": "97301"},
     {"title": "The Governor's Cup Coffee Roasters",
-       location: {
-              lat: 44.940984,
-              lng: -123.036755
+       "location": {
+              "lat": 44.940984,
+              "lng": -123.036755
             },
               "address": "471 Court St NE",
               "city": "Salem",
               "state": "OR",
               "zipcode": "97301"},
     {"title": "Salem Center",
-       location: {
-              lat: 44.943273,
-              lng: -123.036157
+       "location": {
+              "lat": 44.943273,
+              "lng": -123.036157
             },
                 "address": "",
                 "city": "Salem",
                 "state": "OR",
                 "zipcode": "97301"},
-  ];
+  ]
 }
