@@ -13,7 +13,7 @@
     <div id="wrapper">
         <div id="sidebar-wrapper">
             <div class="search">
-                <input id="filter" type="text" placeholder="Search Salem!" data-bind="textInput: filter" class="form-control">
+                <input id="filter" type="text" placeholder="Search Salem!" data-bind="textInput: userQuery, valueUpdate: 'afterkeydown'" class="form-control">
                 <ul class data-bind="foreach: visibleLocations">
                     <li class="location" data-bind="text: title, click: $parent.markerAnimator">
                     </li>

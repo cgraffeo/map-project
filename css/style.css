@@ -5,7 +5,7 @@ html, body {
   padding: 0;
 }
 
-#wrapper, #main-wrapper, .container-fluid, .row {
+#wrapper, #main-wrapper{
   height: 100%;
   width: 100%;
 }
@@ -116,7 +116,7 @@ html, body {
     background: none;
 }
 
-/*@media(min-width:768px) {
+@media(min-width:768px) {
     #wrapper {
         padding-left: 0;
     }
@@ -142,4 +142,4 @@ html, body {
         position: relative;
         margin-right: 0;
     }
-}*/
+}
