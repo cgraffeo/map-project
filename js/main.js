@@ -27,7 +27,7 @@ function initMap(){
   viewModel.google(!!window.google);
 
 }
-// Loading Locations Data Dynamically
+// Loads location data
 function SalemListModel(localSpots){
   $.ajax({
     method: 'get',
@@ -43,7 +43,7 @@ function SalemListModel(localSpots){
   })
 }
 
-//Model - LocationModel constructor funtion
+// Contructor function for LocationModel
 var LocationModel = function(location, viewModel) {
   var self = this;
 
@@ -66,7 +66,7 @@ var LocationModel = function(location, viewModel) {
         animation: google.maps.Animation.DROP,
       });
       self.marker.setVisible(true);
-      //Create contentString for the InfoWindow
+      //Build infowindow with content
       self.contentString = ko.computed(function(){
         return `
           <div><i>${self.title}</i></div>
@@ -75,7 +75,7 @@ var LocationModel = function(location, viewModel) {
         `
       });
       self.marker.addListener('click', function(){
-        // Wikipedia API
+        // Adding Wikipedia API
         var wikiUrl = 'https://en.wikipedia.org/w/api.php?'+
                       'action=opensearch&search=' + self.title +
                       '&format=json&callback=wikiCallback';
@@ -85,17 +85,17 @@ var LocationModel = function(location, viewModel) {
         }).done(function(response){
           var article = response[3][0];
           var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`
-          //Set content with InfoWindow
+          //Set infowindow content
           viewModel.largeInfoWindow.setContent(self.contentString() + url);
           // Open LargeInfoWindow
           viewModel.largeInfoWindow.open(map, self.marker);
         }).fail(function(){
-          //Set content with InfoWindow
+          //Set infowindow content
           viewModel.largeInfoWindow.setContent(self.contentString() + `<em><br>Wikipedia data isn't loading</em>`);
           // Open LargeInfoWindow
           viewModel.largeInfoWindow.open(map, self.marker);
         });
-        // Marker Animation
+        // Marker Animations
         self.marker.setAnimation(google.maps.Animation.BOUNCE);
         setTimeout (function(){self.marker.setAnimation(null);}, 750);
       });
@@ -107,7 +107,7 @@ var LocationModel = function(location, viewModel) {
 var ViewModel = function(LocationModel) {
   var self = this;
   self.localSpots = ko.observableArray();
-  self.google = ko.observable(!!window.google);  //Sets the Google Window to False
+  self.google = ko.observable(!!window.google);
 
   SalemListModel(self.localSpots);
 
@@ -122,7 +122,7 @@ var ViewModel = function(LocationModel) {
   // userQuery represents the user input into the search box
   self.userQuery = ko.observable("");
 
-  // Search List is a filtered list of the
+  // Filter functionality for data text
   self.visibleLocations = ko.computed(function(){
     var searchFilter = self.userQuery().toLowerCase();
     return ko.utils.arrayFilter(self.localSpots(), function(location){
@@ -135,13 +135,13 @@ var ViewModel = function(LocationModel) {
   });
 
 
-  // Click binding
+  // Click binding for markers
   self.markerAnimator = function(location) {
     google.maps.event.trigger(location.marker, 'click');
   };
 
 
 };
-// Instiate the viewModel
+
 viewModel = new ViewModel();
 ko.applyBindings(viewModel);
