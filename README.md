@@ -5,6 +5,4 @@ This single page application was built using:
 * Twitter Bootstrap
 * Knockout JS
 
-## Application must be run on a server to avoid CORS issues A NPM module for a easy server can be found [here]
-
-[1]: https://www.npmjs.com/package/local-web-server
+## Application must be run on a server to avoid CORS issues A NPM module for a easy server can be found here: https://www.npmjs.com/package/local-web-server
