@@ -34,13 +34,13 @@ function SalemListModel(localSpots){
     dataType: 'json',
     url: '/js/data.json'
   }).done(function(data){
-    var locations = data.locations
+    var locations = data.locations;
     locations.forEach(function(loc, i){
       viewModel.localSpots.push(new LocationModel(loc, viewModel));
-    })
+    });
   }).fail(function(error){
-    console.error(error)
-  })
+    console.error(error);
+  });
 }
 
 // Contructor function for LocationModel
@@ -72,7 +72,7 @@ var LocationModel = function(location, viewModel) {
           <div><i>${self.title}</i></div>
           <div>${self.address}</div>
           <div>${self.city}, ${self.state} ${self.zipcode}</div>
-        `
+        `;
       });
       self.marker.addListener('click', function(){
         // Adding Wikipedia API
@@ -84,7 +84,7 @@ var LocationModel = function(location, viewModel) {
           dataType: "jsonp"
         }).done(function(response){
           var article = response[3][0];
-          var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`
+          var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`;
           //Set infowindow content
           viewModel.largeInfoWindow.setContent(self.contentString() + url);
           // Open LargeInfoWindow
