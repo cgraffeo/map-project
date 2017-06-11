@@ -85,12 +85,12 @@ var LocationModel = function(location, viewModel) {
         }).done(function(response){
           var article = response[3][0];
           if (article === undefined){
-          var url = `<div> Sorry, No Wikipedia Article availabe for ${self.title}</div>`;
-          viewModel.largeInfoWindow.setContent(self.contentString() + url);
+          var failurl = `<div> Sorry, No Wikipedia Article availabe for ${self.title}</div>`;
+          viewModel.largeInfoWindow.setContent(self.contentString() + failurl);
           } else {
-          var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`;
+          var successurl = `<div><a href="${article}" target="_blank">${self.title}</a></div>`;
           //Set infowindow content
-          viewModel.largeInfoWindow.setContent(self.contentString() + url);}
+          viewModel.largeInfoWindow.setContent(self.contentString() + successurl);}
           // Open LargeInfoWindow
           viewModel.largeInfoWindow.open(map, self.marker);
         }).fail(function(){
