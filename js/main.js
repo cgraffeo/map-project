@@ -84,7 +84,10 @@ var LocationModel = function(location, viewModel) {
           dataType: "jsonp"
         }).done(function(response){
           var article = response[3][0];
-          var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`;
+          if (article === undefined){
+            var url = `<div> Sorry, No Wikipedia Article availabe for ${self.title}</div>`;
+          } else {
+          var url = `<div><a href="${article}" target="_blank">${self.title}</a></div>`; }
           //Set infowindow content
           viewModel.largeInfoWindow.setContent(self.contentString() + url);
           // Open LargeInfoWindow
